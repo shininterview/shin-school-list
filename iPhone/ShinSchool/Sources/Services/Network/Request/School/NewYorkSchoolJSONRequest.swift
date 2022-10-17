@@ -1,7 +1,7 @@
 import Foundation
 
 /// Helper used for fetching school informations.
-class SchoolJSONRequest {
+class NewYorkSchoolJSONRequest {
 
   enum APIConstants {
     static let parserErrorDomain = "parserErrorDomain"
@@ -16,7 +16,7 @@ class SchoolJSONRequest {
   }
 
   func fetchJSONObjects(
-    pageSize: Int, pageIndex: Int,
+    pageSize: Int, pageOffset: Int,
     completion: @escaping (Result<[Any], Error>) -> Void
   ) {
     guard var requestURLComponents = URLComponents(string: APIConstants.schoolAPIEndPoint) else {
@@ -32,7 +32,7 @@ class SchoolJSONRequest {
       name: RequestParameterConstants.limitKey, value: String(pageSize))
 
     let offsetQueryItem = URLQueryItem(
-      name: RequestParameterConstants.offsetKey, value: String(pageSize * pageIndex))
+      name: RequestParameterConstants.offsetKey, value: String(pageOffset))
 
     let locationCoordinate = clientConstants.locationCoordinate
     // A sample whereQuery can be: where=latitude between 40.6128 and 40.8128 and longitude between -74.106 and -73.906

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824C28FCC26A00AFDB84 /* ClientConstants.swift */; };
-		C679825028FCC26A00AFDB84 /* SchoolJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824E28FCC26A00AFDB84 /* SchoolJSONRequest.swift */; };
+		C679825028FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */; };
 		C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */; };
 		C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */; };
 		C679825C28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825B28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift */; };
@@ -16,6 +16,7 @@
 		C67982A528FCFEC500AFDB84 /* SchoolJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = C67982A428FCFEC500AFDB84 /* SchoolJSON.json */; };
 		C67982AC28FD08E700AFDB84 /* SchoolTableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982AA28FD03D200AFDB84 /* SchoolTableColumn.swift */; };
 		C67982AD28FD08EB00AFDB84 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982A828FD02F300AFDB84 /* School.swift */; };
+		C67982AF28FD0F5B00AFDB84 /* SchoolModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982AE28FD0F5B00AFDB84 /* SchoolModelRequest.swift */; };
 		C6F3510128F3C786004FFB26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F350FE28F3C786004FFB26 /* AppDelegate.swift */; };
 		C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */; };
 		C6F3510A28F3C794004FFB26 /* ShinSchoolInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6F3510428F3C794004FFB26 /* ShinSchoolInfo.plist */; };
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		C64517FF28F3C1A000E5064D /* ShinSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShinSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C679824C28FCC26A00AFDB84 /* ClientConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConstants.swift; sourceTree = "<group>"; };
-		C679824E28FCC26A00AFDB84 /* SchoolJSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolJSONRequest.swift; sourceTree = "<group>"; };
+		C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewYorkSchoolJSONRequest.swift; sourceTree = "<group>"; };
 		C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseClientConstants.swift; sourceTree = "<group>"; };
 		C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameterConstants.swift; sourceTree = "<group>"; };
 		C679825928FCFD1200AFDB84 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +46,7 @@
 		C67982A428FCFEC500AFDB84 /* SchoolJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SchoolJSON.json; sourceTree = "<group>"; };
 		C67982A828FD02F300AFDB84 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		C67982AA28FD03D200AFDB84 /* SchoolTableColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableColumn.swift; sourceTree = "<group>"; };
+		C67982AE28FD0F5B00AFDB84 /* SchoolModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModelRequest.swift; sourceTree = "<group>"; };
 		C6F350FE28F3C786004FFB26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C6F3510428F3C794004FFB26 /* ShinSchoolInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShinSchoolInfo.plist; sourceTree = "<group>"; };
@@ -128,7 +130,8 @@
 		C679824D28FCC26A00AFDB84 /* School */ = {
 			isa = PBXGroup;
 			children = (
-				C679824E28FCC26A00AFDB84 /* SchoolJSONRequest.swift */,
+				C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */,
+				C67982AE28FD0F5B00AFDB84 /* SchoolModelRequest.swift */,
 			);
 			path = School;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C67982AC28FD08E700AFDB84 /* SchoolTableColumn.swift in Sources */,
+				C67982AF28FD0F5B00AFDB84 /* SchoolModelRequest.swift in Sources */,
 				C6F3510128F3C786004FFB26 /* AppDelegate.swift in Sources */,
 				C67982A128FCFDAB00AFDB84 /* SchoolJSONParser.swift in Sources */,
 				C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */,
@@ -322,7 +326,7 @@
 				C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */,
 				C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */,
 				C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */,
-				C679825028FCC26A00AFDB84 /* SchoolJSONRequest.swift in Sources */,
+				C679825028FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
