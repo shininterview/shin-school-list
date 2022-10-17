@@ -27,4 +27,21 @@ public class School {
     self.stateCode = stateCode
     self.zip = zip
   }
+
+  public static func == (lhs: School, rhs: School) -> Bool {
+    return
+      lhs.borough == rhs.borough && lhs.email == rhs.email && lhs.location == rhs.location
+      && lhs.name == rhs.name && lhs.neighborhood == rhs.neighborhood && lhs.website == rhs.website
+      && lhs.email == rhs.email && lhs.city == rhs.city && lhs.stateCode == rhs.stateCode
+      && lhs.zip == rhs.zip
+  }
+}
+
+// MARK: - Hashable
+
+extension School: Hashable {
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(name)
+    hasher.combine(website)
+  }
 }
