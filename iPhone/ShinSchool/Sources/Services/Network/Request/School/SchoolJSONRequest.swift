@@ -9,12 +9,6 @@ class SchoolJSONRequest {
     static let schoolAPIEndPoint = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
   }
 
-  /// The SQL column name for the New York school school table.
-  enum TableColumnName {
-    static let latitudeKey = "latitude"
-    static let longitudeKey = "longitude"
-  }
-
   let clientConstants: ClientConstants
 
   init(clientConstants: ClientConstants) {
@@ -43,7 +37,7 @@ class SchoolJSONRequest {
     let locationCoordinate = clientConstants.locationCoordinate
     // A sample whereQuery can be: where=latitude between 40.6128 and 40.8128 and longitude between -74.106 and -73.906
     let whereQuery =
-      "\(TableColumnName.latitudeKey) between \(locationCoordinate.latitude - APIConstants.radiusDistance) and \(locationCoordinate.latitude + APIConstants.radiusDistance) and \(TableColumnName.longitudeKey) between \(locationCoordinate.longitude - APIConstants.radiusDistance) and \(locationCoordinate.longitude + APIConstants.radiusDistance)"
+      "\(SchoolTableColumn.latitude) between \(locationCoordinate.latitude - APIConstants.radiusDistance) and \(locationCoordinate.latitude + APIConstants.radiusDistance) and \(SchoolTableColumn.longitude) between \(locationCoordinate.longitude - APIConstants.radiusDistance) and \(locationCoordinate.longitude + APIConstants.radiusDistance)"
 
     let whereQueryItem = URLQueryItem(name: RequestParameterConstants.whereKey, value: whereQuery)
 
