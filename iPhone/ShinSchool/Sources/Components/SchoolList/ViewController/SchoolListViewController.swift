@@ -4,14 +4,16 @@ import UIKit
 
 /// This @c UIViewController shows a list of school.
 class SchoolListViewController: UIViewController {
-  enum Constants {
+  private enum Constants {
     static let httpsScheme = "https"
     static let pageSize = 10
     static let prefetchThreshold = 40.0
   }
 
   private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<Int, School>()
+  /// Indicates if there can be more pages of data available.
   private var hasMoreData = false
+  /// Flag used to drown multiple concurrent network requests.
   private var isRequestingData = false
   private let schoolModelRequest: SchoolModelRequest
   private let tableView: UITableView = UITableView()
@@ -66,14 +68,8 @@ class SchoolListViewController: UIViewController {
 
   // MARK: - Private
 
-  private func appendAndShowCellsForSchools(_ schools: [School]) {
-    // Assume there is more data if the data size is same as the page size.
-    hasMoreData = schools.count == Constants.pageSize
-    dataSourceSnapshot.appendItems(schools)
-    tableViewDataSource.apply(dataSourceSnapshot, animatingDifferences: false)
-  }
-
   private func fetchSchoolsModel() {
+    // Drown multiple request. Only allow one request at a time.
     if isRequestingData {
       return
     }
@@ -85,7 +81,7 @@ class SchoolListViewController: UIViewController {
         do {
           let schools = try response.get()
           if let self = self {
-            self.appendAndShowCellsForSchools(schools)
+            self.processServerData(schools)
           }
         } catch {
           print(error)
@@ -96,6 +92,13 @@ class SchoolListViewController: UIViewController {
           self.isRequestingData = false
         }
       })
+  }
+
+  private func processServerData(_ schools: [School]) {
+    // Assume there is more data if the data size is same as the page size.
+    hasMoreData = schools.count == Constants.pageSize
+    dataSourceSnapshot.appendItems(schools)
+    tableViewDataSource.apply(dataSourceSnapshot, animatingDifferences: false)
   }
 }
 
@@ -147,6 +150,7 @@ extension SchoolListViewController: UITableViewDelegate {
 
 extension SchoolListViewController: UIScrollViewDelegate {
   func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+    // Fetch the next page if our users scroll to the bottom of the list.
     if hasMoreData && !isRequestingData
       && scrollView.contentOffset.y + scrollView.bounds.size.height + Constants.prefetchThreshold
         >= scrollView.contentSize.height

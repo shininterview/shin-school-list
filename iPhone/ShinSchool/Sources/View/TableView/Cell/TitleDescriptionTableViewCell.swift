@@ -1,5 +1,6 @@
 import UIKit
 
+/// A @c UITableViewCell that can display a title and a description.
 class TitleDescriptionTableViewCell: UITableViewCell {
 
   let titleLabel = UILabel()

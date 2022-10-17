@@ -5,7 +5,7 @@ import XCTest
 /// Verifies if we can parse the schol JSON correctly.
 class SchoolJSONParserUnitTests: XCTestCase {
 
-  enum Constants {
+  private enum Constants {
     static let JSONFileName = "SchoolJSON"
     static let JSONFileType = "json"
   }

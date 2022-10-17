@@ -101,21 +101,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C65C439628FDE19700F6EF05 /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-				C65C439728FDE1A500F6EF05 /* ViewController */,
-			);
-			path = WebView;
-			sourceTree = "<group>";
-		};
-		C65C439728FDE1A500F6EF05 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		C65C439B28FDFE3B00F6EF05 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,7 +242,6 @@
 		C67982B528FD168800AFDB84 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C65C439628FDE19700F6EF05 /* WebView */,
 				C67982B628FD169200AFDB84 /* SchoolList */,
 			);
 			path = Components;

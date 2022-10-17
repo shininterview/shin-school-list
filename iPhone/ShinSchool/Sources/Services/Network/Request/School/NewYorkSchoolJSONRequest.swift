@@ -3,7 +3,7 @@ import Foundation
 /// Helper used for fetching school informations.
 class NewYorkSchoolJSONRequest {
 
-  enum APIConstants {
+  private enum APIConstants {
     static let radiusDistance = 0.1
     static let schoolAPIEndPoint = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
   }

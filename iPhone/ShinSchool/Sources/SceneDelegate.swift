@@ -13,7 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // Notes for interviewer: Avoid storyboard because it's hard to resolve git merge conflicts in storeboard files.
     let schoolModelRequest = NewYorkSchoolModelRequest(clientConstants: ChaseClientConstants())
-    // let schoolModelRequest = SchoolModelRequestFake()
     let schoolListViewController = SchoolListViewController(schoolModelRequest: schoolModelRequest)
     window.rootViewController = UINavigationController(rootViewController: schoolListViewController)
     self.window = window

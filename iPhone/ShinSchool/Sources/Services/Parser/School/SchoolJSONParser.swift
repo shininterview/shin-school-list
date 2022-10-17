@@ -1,5 +1,8 @@
 import Foundation
 
+/// Helper class for parsing the school data from the API response.
+/// See a sample response below to see the available properties:
+/// https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$$app_token=QIJIwfPSzqXgvFAURtmHNpbDw&$limit=1
 public class SchoolJSONParser {
   public static func schoolsFromJSONArray(_ JSONArray: [[String: AnyObject]]) -> [School] {
     var schools = [School]()

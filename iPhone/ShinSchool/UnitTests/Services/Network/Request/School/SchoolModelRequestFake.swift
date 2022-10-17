@@ -1,8 +1,8 @@
 import Foundation
 
-/// Fake implementation of @c SchoolModelRequest.
+/// Fake implementation of @c SchoolModelRequest for our unit tests.
 class SchoolModelRequestFake: SchoolModelRequest {
-  enum SampleData {
+  private enum SampleData {
     static let text = "test"
     static let website = "https://www.google.com/"
   }

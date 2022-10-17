@@ -1,5 +1,8 @@
 import Foundation
 
+/// Model for the school object.
+/// See a sample response below to see the available properties:
+/// https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$$app_token=QIJIwfPSzqXgvFAURtmHNpbDw&$limit=1
 public class School {
   let borough: String
   let email: String

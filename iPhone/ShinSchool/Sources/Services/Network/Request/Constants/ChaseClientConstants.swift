@@ -3,7 +3,7 @@ import Foundation
 
 /// This file contains the client constants for the Chase app. Our unit tests can provide different constants.
 class ChaseClientConstants: ClientConstants {
-  enum Constants {
+  private enum Constants {
     static let latitudeKey = "latitude"
     static let longitudeKey = "longitude"
     static let defaultLatitude = 40.7128  // New work latitude.
