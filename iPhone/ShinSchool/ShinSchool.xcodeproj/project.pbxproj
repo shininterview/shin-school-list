@@ -11,6 +11,11 @@
 		C679825028FCC26A00AFDB84 /* SchoolJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824E28FCC26A00AFDB84 /* SchoolJSONRequest.swift */; };
 		C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */; };
 		C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */; };
+		C679825C28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825B28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift */; };
+		C67982A128FCFDAB00AFDB84 /* SchoolJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982A028FCFDAB00AFDB84 /* SchoolJSONParser.swift */; };
+		C67982A528FCFEC500AFDB84 /* SchoolJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = C67982A428FCFEC500AFDB84 /* SchoolJSON.json */; };
+		C67982AC28FD08E700AFDB84 /* SchoolTableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982AA28FD03D200AFDB84 /* SchoolTableColumn.swift */; };
+		C67982AD28FD08EB00AFDB84 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982A828FD02F300AFDB84 /* School.swift */; };
 		C6F3510128F3C786004FFB26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F350FE28F3C786004FFB26 /* AppDelegate.swift */; };
 		C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */; };
 		C6F3510A28F3C794004FFB26 /* ShinSchoolInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6F3510428F3C794004FFB26 /* ShinSchoolInfo.plist */; };
@@ -18,12 +23,28 @@
 		C6F3510C28F3C794004FFB26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F3510628F3C794004FFB26 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C679825D28FCFD1200AFDB84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C64517F728F3C1A000E5064D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C64517FE28F3C1A000E5064D;
+			remoteInfo = ShinSchool;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		C64517FF28F3C1A000E5064D /* ShinSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShinSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C679824C28FCC26A00AFDB84 /* ClientConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConstants.swift; sourceTree = "<group>"; };
 		C679824E28FCC26A00AFDB84 /* SchoolJSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolJSONRequest.swift; sourceTree = "<group>"; };
 		C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseClientConstants.swift; sourceTree = "<group>"; };
 		C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameterConstants.swift; sourceTree = "<group>"; };
+		C679825928FCFD1200AFDB84 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C679825B28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolJSONParserUnitTests.swift; sourceTree = "<group>"; };
+		C67982A028FCFDAB00AFDB84 /* SchoolJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolJSONParser.swift; sourceTree = "<group>"; };
+		C67982A428FCFEC500AFDB84 /* SchoolJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SchoolJSON.json; sourceTree = "<group>"; };
+		C67982A828FD02F300AFDB84 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		C67982AA28FD03D200AFDB84 /* SchoolTableColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableColumn.swift; sourceTree = "<group>"; };
 		C6F350FE28F3C786004FFB26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C6F3510428F3C794004FFB26 /* ShinSchoolInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShinSchoolInfo.plist; sourceTree = "<group>"; };
@@ -39,6 +60,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C679825628FCFD1200AFDB84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -47,6 +75,7 @@
 			children = (
 				C6F3510328F3C794004FFB26 /* Resources */,
 				C6F350FC28F3C786004FFB26 /* Sources */,
+				C679825A28FCFD1200AFDB84 /* UnitTests */,
 				C645180028F3C1A000E5064D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				C64517FF28F3C1A000E5064D /* ShinSchool.app */,
+				C679825928FCFD1200AFDB84 /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +92,7 @@
 		C679824828FCC26A00AFDB84 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C679829E28FCFD8F00AFDB84 /* Parser */,
 				C679824928FCC26A00AFDB84 /* Network */,
 			);
 			path = Services;
@@ -102,9 +133,68 @@
 			path = School;
 			sourceTree = "<group>";
 		};
+		C679825A28FCFD1200AFDB84 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				C67982A228FCFDB700AFDB84 /* Services */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		C679829E28FCFD8F00AFDB84 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				C679829F28FCFD9600AFDB84 /* School */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		C679829F28FCFD9600AFDB84 /* School */ = {
+			isa = PBXGroup;
+			children = (
+				C67982A028FCFDAB00AFDB84 /* SchoolJSONParser.swift */,
+				C67982AA28FD03D200AFDB84 /* SchoolTableColumn.swift */,
+			);
+			path = School;
+			sourceTree = "<group>";
+		};
+		C67982A228FCFDB700AFDB84 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C67982A328FCFE2000AFDB84 /* Parser */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C67982A328FCFE2000AFDB84 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				C679825B28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift */,
+				C67982A428FCFEC500AFDB84 /* SchoolJSON.json */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		C67982A628FD02D300AFDB84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C67982A728FD02DE00AFDB84 /* School */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C67982A728FD02DE00AFDB84 /* School */ = {
+			isa = PBXGroup;
+			children = (
+				C67982A828FD02F300AFDB84 /* School.swift */,
+			);
+			path = School;
+			sourceTree = "<group>";
+		};
 		C6F350FC28F3C786004FFB26 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C67982A628FD02D300AFDB84 /* Model */,
 				C679824828FCC26A00AFDB84 /* Services */,
 				C6F350FE28F3C786004FFB26 /* AppDelegate.swift */,
 				C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */,
@@ -142,6 +232,24 @@
 			productReference = C64517FF28F3C1A000E5064D /* ShinSchool.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C679825828FCFD1200AFDB84 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C679825F28FCFD1200AFDB84 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				C679825528FCFD1200AFDB84 /* Sources */,
+				C679825628FCFD1200AFDB84 /* Frameworks */,
+				C679825728FCFD1200AFDB84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C679825E28FCFD1200AFDB84 /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = C679825928FCFD1200AFDB84 /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,6 +262,10 @@
 				TargetAttributes = {
 					C64517FE28F3C1A000E5064D = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					C679825828FCFD1200AFDB84 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = C64517FE28F3C1A000E5064D;
 					};
 				};
 			};
@@ -171,6 +283,7 @@
 			projectRoot = "";
 			targets = (
 				C64517FE28F3C1A000E5064D /* ShinSchool */,
+				C679825828FCFD1200AFDB84 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +299,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C679825728FCFD1200AFDB84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C67982A528FCFEC500AFDB84 /* SchoolJSON.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -193,8 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C67982AC28FD08E700AFDB84 /* SchoolTableColumn.swift in Sources */,
 				C6F3510128F3C786004FFB26 /* AppDelegate.swift in Sources */,
+				C67982A128FCFDAB00AFDB84 /* SchoolJSONParser.swift in Sources */,
 				C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */,
+				C67982AD28FD08EB00AFDB84 /* School.swift in Sources */,
 				C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */,
 				C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */,
 				C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */,
@@ -202,7 +326,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C679825528FCFD1200AFDB84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C679825C28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C679825E28FCFD1200AFDB84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C64517FE28F3C1A000E5064D /* ShinSchool */;
+			targetProxy = C679825D28FCFD1200AFDB84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C6F3510628F3C794004FFB26 /* LaunchScreen.storyboard */ = {
@@ -384,6 +524,42 @@
 			};
 			name = Release;
 		};
+		C679826028FCFD1200AFDB84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 852A76BMJ9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.group.1000.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShinSchool.app/ShinSchool";
+			};
+			name = Debug;
+		};
+		C679826128FCFD1200AFDB84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 852A76BMJ9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.group.1000.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShinSchool.app/ShinSchool";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -401,6 +577,15 @@
 			buildConfigurations = (
 				C645182A28F3C1A100E5064D /* Debug */,
 				C645182B28F3C1A100E5064D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C679825F28FCFD1200AFDB84 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C679826028FCFD1200AFDB84 /* Debug */,
+				C679826128FCFD1200AFDB84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
