@@ -6,6 +6,7 @@ import UIKit
 class SchoolListViewController: UIViewController {
   enum Constants {
     static let pageSize = 10
+    static let httpsScheme = "https"
   }
 
   private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<Int, School>()
@@ -124,8 +125,16 @@ extension SchoolListViewController: UITableViewDelegate {
 
     let school = schools[index]
     let websiteURLString = school.website
-    guard let websiteURL = URL(string: websiteURLString) else {
-      assert(false, "invalid website: \(school.website)")
+    guard var URLComponents = URLComponents(string: websiteURLString) else {
+      assert(false, "invalid website: \(websiteURLString)")
+      return
+    }
+    if URLComponents.scheme == nil {
+      URLComponents.scheme = Constants.httpsScheme
+    }
+
+    guard let websiteURL = URLComponents.url else {
+      assert(false, "invalid website: \(websiteURLString)")
       return
     }
     let safariViewController = SFSafariViewController(url: websiteURL)
