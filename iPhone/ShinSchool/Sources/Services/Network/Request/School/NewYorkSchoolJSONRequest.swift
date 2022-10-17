@@ -4,7 +4,6 @@ import Foundation
 class NewYorkSchoolJSONRequest {
 
   enum APIConstants {
-    static let parserErrorDomain = "parserErrorDomain"
     static let radiusDistance = 0.01
     static let schoolAPIEndPoint = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
   }
@@ -60,12 +59,7 @@ class NewYorkSchoolJSONRequest {
         if let JSONString = try? JSONSerialization.jsonObject(with: data, options: []) as? [Any] {
           completion(.success(JSONString))
         } else {
-          let userInfo = [
-            NSLocalizedDescriptionKey: "Failed to parse the school NSData into JSON objects."
-          ]
-          let parseError = NSError(
-            domain: APIConstants.parserErrorDomain, code: NSNotFound, userInfo: userInfo)
-          completion(.failure(parseError))
+          completion(.failure(ClientError.invalidServerResponse))
         }
       }
     }

@@ -17,6 +17,8 @@
 		C67982AC28FD08E700AFDB84 /* SchoolTableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982AA28FD03D200AFDB84 /* SchoolTableColumn.swift */; };
 		C67982AD28FD08EB00AFDB84 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982A828FD02F300AFDB84 /* School.swift */; };
 		C67982AF28FD0F5B00AFDB84 /* SchoolModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982AE28FD0F5B00AFDB84 /* SchoolModelRequest.swift */; };
+		C67982B128FD114500AFDB84 /* NewYorkSchoolModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982B028FD114500AFDB84 /* NewYorkSchoolModelRequest.swift */; };
+		C67982B428FD148D00AFDB84 /* ClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67982B328FD148D00AFDB84 /* ClientError.swift */; };
 		C6F3510128F3C786004FFB26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F350FE28F3C786004FFB26 /* AppDelegate.swift */; };
 		C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */; };
 		C6F3510A28F3C794004FFB26 /* ShinSchoolInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6F3510428F3C794004FFB26 /* ShinSchoolInfo.plist */; };
@@ -47,6 +49,8 @@
 		C67982A828FD02F300AFDB84 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		C67982AA28FD03D200AFDB84 /* SchoolTableColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableColumn.swift; sourceTree = "<group>"; };
 		C67982AE28FD0F5B00AFDB84 /* SchoolModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModelRequest.swift; sourceTree = "<group>"; };
+		C67982B028FD114500AFDB84 /* NewYorkSchoolModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkSchoolModelRequest.swift; sourceTree = "<group>"; };
+		C67982B328FD148D00AFDB84 /* ClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientError.swift; sourceTree = "<group>"; };
 		C6F350FE28F3C786004FFB26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C6F3510428F3C794004FFB26 /* ShinSchoolInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShinSchoolInfo.plist; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			children = (
 				C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */,
 				C67982AE28FD0F5B00AFDB84 /* SchoolModelRequest.swift */,
+				C67982B028FD114500AFDB84 /* NewYorkSchoolModelRequest.swift */,
 			);
 			path = School;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 		C67982A628FD02D300AFDB84 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C67982B228FD146800AFDB84 /* Error */,
 				C67982A728FD02DE00AFDB84 /* School */,
 			);
 			path = Model;
@@ -192,6 +198,14 @@
 				C67982A828FD02F300AFDB84 /* School.swift */,
 			);
 			path = School;
+			sourceTree = "<group>";
+		};
+		C67982B228FD146800AFDB84 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C67982B328FD148D00AFDB84 /* ClientError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C6F350FC28F3C786004FFB26 /* Sources */ = {
@@ -319,12 +333,14 @@
 			files = (
 				C67982AC28FD08E700AFDB84 /* SchoolTableColumn.swift in Sources */,
 				C67982AF28FD0F5B00AFDB84 /* SchoolModelRequest.swift in Sources */,
+				C67982B128FD114500AFDB84 /* NewYorkSchoolModelRequest.swift in Sources */,
 				C6F3510128F3C786004FFB26 /* AppDelegate.swift in Sources */,
 				C67982A128FCFDAB00AFDB84 /* SchoolJSONParser.swift in Sources */,
 				C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */,
 				C67982AD28FD08EB00AFDB84 /* School.swift in Sources */,
 				C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */,
 				C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */,
+				C67982B428FD148D00AFDB84 /* ClientError.swift in Sources */,
 				C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */,
 				C679825028FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift in Sources */,
 			);
