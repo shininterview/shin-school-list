@@ -42,7 +42,7 @@ public class SchoolJSONParser {
       return nil
     }
     return School(
-      email: email, location: location, name: name, neighborhood: neighborhood, website: website,
-      city: city, zip: zip, stateCode: stateCode, borough: borough)
+      borough: borough, email: email, location: location, name: name, neighborhood: neighborhood,
+      website: website, city: city, stateCode: stateCode, zip: zip)
   }
 }

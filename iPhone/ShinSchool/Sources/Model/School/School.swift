@@ -1,6 +1,7 @@
 import Foundation
 
 public class School {
+  let borough: String
   let email: String
   let location: String
   let name: String
@@ -8,14 +9,14 @@ public class School {
   let website: String
 
   let city: String
-  let zip: String
   let stateCode: String
-  let borough: String
+  let zip: String
 
   init(
-    email: String, location: String, name: String, neighborhood: String,
-    website: String, city: String, zip: String, stateCode: String, borough: String
+    borough: String, email: String, location: String, name: String, neighborhood: String,
+    website: String, city: String, stateCode: String, zip: String
   ) {
+    self.borough = borough
     self.email = email
     self.location = location
     self.name = name
@@ -23,8 +24,7 @@ public class School {
     self.website = website
 
     self.city = city
-    self.zip = zip
     self.stateCode = stateCode
-    self.borough = borough
+    self.zip = zip
   }
 }

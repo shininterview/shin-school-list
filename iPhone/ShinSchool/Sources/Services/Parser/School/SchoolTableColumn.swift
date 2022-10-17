@@ -8,10 +8,10 @@ enum SchoolTableColumn {
   static let neighborhood = "neighborhood"
   static let website = "website"
 
-  static let city = "city"
-  static let zip = "zip"
-  static let stateCode = "state_code"
   static let borough = "borough"
+  static let city = "city"
+  static let stateCode = "state_code"
+  static let zip = "zip"
 
   static let latitude = "latitude"
   static let longitude = "longitude"
