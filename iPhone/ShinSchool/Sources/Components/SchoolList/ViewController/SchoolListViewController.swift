@@ -1,11 +1,9 @@
 import Foundation
-import SafariServices
 import UIKit
 
 /// This @c UIViewController shows a list of school.
 class SchoolListViewController: UIViewController {
   private enum Constants {
-    static let httpsScheme = "https"
     static let pageSize = 10
     static let prefetchThreshold = 40.0
   }
@@ -15,12 +13,12 @@ class SchoolListViewController: UIViewController {
   private var hasMoreData = false
   /// Flag used to drown multiple concurrent network requests.
   private var isRequestingData = false
-  private let schoolModelRequest: SchoolModelRequest
+  private let deps: SchoolListViewControllerDeps
   private let tableView: UITableView = UITableView()
   private var tableViewDataSource: UITableViewDiffableDataSource<Int, School>
 
-  init(schoolModelRequest: SchoolModelRequest) {
-    self.schoolModelRequest = schoolModelRequest
+  init(deps: SchoolListViewControllerDeps) {
+    self.deps = deps
 
     tableViewDataSource = UITableViewDiffableDataSource<Int, School>(tableView: tableView) {
       tableView, indexPath, school in
@@ -52,7 +50,7 @@ class SchoolListViewController: UIViewController {
 
   public override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.systemBackground
+    view.backgroundColor = .systemBackground
     view.addSubview(tableView)
 
     let safeAreaLayoutGuide = view.safeAreaLayoutGuide
@@ -75,7 +73,7 @@ class SchoolListViewController: UIViewController {
     }
 
     isRequestingData = true
-    schoolModelRequest.fetchSchools(
+    deps.schoolModelRequest.fetchSchools(
       pageSize: Constants.pageSize, pageOffset: dataSourceSnapshot.itemIdentifiers.count,
       completion: { [weak self] response in
         do {
@@ -128,21 +126,8 @@ extension SchoolListViewController: UITableViewDelegate {
     }
 
     let school = schools[index]
-    let websiteURLString = school.website
-    guard var URLComponents = URLComponents(string: websiteURLString) else {
-      assert(false, "invalid website: \(websiteURLString)")
-      return
-    }
-    if URLComponents.scheme == nil {
-      URLComponents.scheme = Constants.httpsScheme
-    }
-
-    guard let websiteURL = URLComponents.url else {
-      assert(false, "invalid website: \(websiteURLString)")
-      return
-    }
-    let safariViewController = SFSafariViewController(url: websiteURL)
-    navigationController.pushViewController(safariViewController, animated: true)
+    let viewController = SchoolDetailViewController(school: school)
+    navigationController.pushViewController(viewController, animated: true)
   }
 }
 

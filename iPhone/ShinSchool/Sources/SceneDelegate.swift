@@ -12,8 +12,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let window = UIWindow(windowScene: windowScene)
 
     // Notes for interviewer: Avoid storyboard because it's hard to resolve git merge conflicts in storeboard files.
-    let schoolModelRequest = NewYorkSchoolModelRequest(clientConstants: ChaseClientConstants())
-    let schoolListViewController = SchoolListViewController(schoolModelRequest: schoolModelRequest)
+    // let schoolModelRequest = NewYorkSchoolModelRequest(clientConstants: ChaseClientConstants())
+    let schoolModelRequest = SchoolModelRequestFake()
+    let viewControllerDeps = SchoolListViewControllerDeps(schoolModelRequest: schoolModelRequest)
+    let schoolListViewController = SchoolListViewController(deps: viewControllerDeps)
     window.rootViewController = UINavigationController(rootViewController: schoolListViewController)
     self.window = window
     window.makeKeyAndVisible()
