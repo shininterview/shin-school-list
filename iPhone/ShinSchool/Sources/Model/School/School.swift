@@ -10,6 +10,7 @@ public class School {
   let name: String
   let neighborhood: String
   let website: String
+  let UUID: String
 
   let city: String
   let stateCode: String
@@ -17,7 +18,7 @@ public class School {
 
   init(
     borough: String, email: String, location: String, name: String, neighborhood: String,
-    website: String, city: String, stateCode: String, zip: String
+    website: String, UUID: String, city: String, stateCode: String, zip: String
   ) {
     self.borough = borough
     self.email = email
@@ -25,6 +26,7 @@ public class School {
     self.name = name
     self.neighborhood = neighborhood
     self.website = website
+    self.UUID = UUID
 
     self.city = city
     self.stateCode = stateCode
@@ -35,7 +37,7 @@ public class School {
     return
       lhs.borough == rhs.borough && lhs.email == rhs.email && lhs.location == rhs.location
       && lhs.name == rhs.name && lhs.neighborhood == rhs.neighborhood && lhs.website == rhs.website
-      && lhs.email == rhs.email && lhs.city == rhs.city && lhs.stateCode == rhs.stateCode
+      && lhs.UUID == rhs.UUID && lhs.city == rhs.city && lhs.stateCode == rhs.stateCode
       && lhs.zip == rhs.zip
   }
 }
@@ -46,5 +48,6 @@ extension School: Hashable {
   public func hash(into hasher: inout Hasher) {
     hasher.combine(name)
     hasher.combine(website)
+    hasher.combine(UUID)
   }
 }

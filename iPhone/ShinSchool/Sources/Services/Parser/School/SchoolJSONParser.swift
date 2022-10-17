@@ -33,6 +33,9 @@ public class SchoolJSONParser {
     guard let website = dictionary[SchoolTableColumn.website] as? String else {
       return nil
     }
+    guard let UUID = dictionary[SchoolTableColumn.databaseNumber] as? String else {
+      return nil
+    }
     guard let city = dictionary[SchoolTableColumn.city] as? String else {
       return nil
     }
@@ -47,6 +50,6 @@ public class SchoolJSONParser {
     }
     return School(
       borough: borough, email: email, location: location, name: name, neighborhood: neighborhood,
-      website: website, city: city, stateCode: stateCode, zip: zip)
+      website: website, UUID: UUID, city: city, stateCode: stateCode, zip: zip)
   }
 }

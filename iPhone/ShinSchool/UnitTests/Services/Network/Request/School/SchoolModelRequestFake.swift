@@ -13,9 +13,8 @@ class SchoolModelRequestFake: SchoolModelRequest {
     let school = School(
       borough: SampleData.text,
       email: SampleData.text, location: SampleData.text, name: SampleData.text,
-      neighborhood: SampleData.text, website: SampleData.website, city: SampleData.text,
-      stateCode: SampleData.text,
-      zip: SampleData.text)
+      neighborhood: SampleData.text, website: SampleData.website, UUID: SampleData.text,
+      city: SampleData.text, stateCode: SampleData.text, zip: SampleData.text)
     completion(.success([school]))
   }
 }
