@@ -9,6 +9,7 @@ class SchoolListViewController: UIViewController {
   }
 
   private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<Int, School>()
+  private var hasMoreData = false
   private var isRequestingData = false
   private let schoolModelRequest: SchoolModelRequest
   private let tableView: UITableView = UITableView()
@@ -31,6 +32,7 @@ class SchoolListViewController: UIViewController {
     }
 
     super.init(nibName: nil, bundle: nil)
+    self.title = NSLocalizedString("School List", comment: "School List")
 
     dataSourceSnapshot.appendSections([0])
     tableView.dataSource = tableViewDataSource
@@ -46,7 +48,7 @@ class SchoolListViewController: UIViewController {
 
   public override func viewDidLoad() {
     super.viewDidLoad()
-
+    view.backgroundColor = UIColor.systemBackground
     view.addSubview(tableView)
 
     let safeAreaLayoutGuide = view.safeAreaLayoutGuide
@@ -63,6 +65,8 @@ class SchoolListViewController: UIViewController {
   // MARK: - Private
 
   private func appendAndShowCellsForSchools(_ schools: [School]) {
+    // Assume there is more data if the data size is same as the page size.
+    hasMoreData = schools.count == Constants.pageSize
     dataSourceSnapshot.appendItems(schools)
     tableViewDataSource.apply(dataSourceSnapshot, animatingDifferences: false)
   }
@@ -74,7 +78,7 @@ class SchoolListViewController: UIViewController {
 
     isRequestingData = true
     schoolModelRequest.fetchSchools(
-      pageSize: Constants.pageSize, pageOffset: 0,
+      pageSize: Constants.pageSize, pageOffset: dataSourceSnapshot.itemIdentifiers.count,
       completion: { [weak self] response in
         do {
           let schools = try response.get()
@@ -126,5 +130,15 @@ extension SchoolListViewController: UITableViewDelegate {
     }
     let safariViewController = SFSafariViewController(url: websiteURL)
     navigationController.pushViewController(safariViewController, animated: true)
+  }
+
+  func tableView(
+    _ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath
+  ) {
+    if hasMoreData && !isRequestingData
+      && indexPath.item == dataSourceSnapshot.itemIdentifiers.count
+    {
+      fetchSchoolsModel()
+    }
   }
 }
