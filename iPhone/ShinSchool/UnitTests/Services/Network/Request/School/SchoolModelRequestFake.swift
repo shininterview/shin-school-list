@@ -2,19 +2,20 @@ import Foundation
 
 /// Fake implementation of @c SchoolModelRequest.
 class SchoolModelRequestFake: SchoolModelRequest {
-  enum Constants {
-    static let sampleText = "test"
+  enum SampleData {
+    static let text = "test"
+    static let website = "https://www.google.com/"
   }
 
   func fetchSchools(
     pageSize: Int, pageOffset: Int, completion: @escaping (Result<[School], Error>) -> Void
   ) {
     let school = School(
-      borough: Constants.sampleText,
-      email: Constants.sampleText, location: Constants.sampleText, name: Constants.sampleText,
-      neighborhood: Constants.sampleText, website: Constants.sampleText, city: Constants.sampleText,
-      stateCode: Constants.sampleText,
-      zip: Constants.sampleText)
+      borough: SampleData.text,
+      email: SampleData.text, location: SampleData.text, name: SampleData.text,
+      neighborhood: SampleData.text, website: SampleData.website, city: SampleData.text,
+      stateCode: SampleData.text,
+      zip: SampleData.text)
     completion(.success([school]))
   }
 }

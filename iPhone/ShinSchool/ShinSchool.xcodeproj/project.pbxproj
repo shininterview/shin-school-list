@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C65C439A28FDF66E00F6EF05 /* TitleDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C439928FDF66E00F6EF05 /* TitleDescriptionTableViewCell.swift */; };
 		C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824C28FCC26A00AFDB84 /* ClientConstants.swift */; };
 		C679825028FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */; };
 		C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		C64517FF28F3C1A000E5064D /* ShinSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShinSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C65C439928FDF66E00F6EF05 /* TitleDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		C679824C28FCC26A00AFDB84 /* ClientConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConstants.swift; sourceTree = "<group>"; };
 		C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewYorkSchoolJSONRequest.swift; sourceTree = "<group>"; };
 		C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseClientConstants.swift; sourceTree = "<group>"; };
@@ -97,6 +99,45 @@
 				C679825928FCFD1200AFDB84 /* UnitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C65C439628FDE19700F6EF05 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				C65C439728FDE1A500F6EF05 /* ViewController */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		C65C439728FDE1A500F6EF05 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C65C439B28FDFE3B00F6EF05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C65C439C28FDFE4400F6EF05 /* TableView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C65C439C28FDFE4400F6EF05 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				C65C439D28FDFE4900F6EF05 /* Cell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		C65C439D28FDFE4900F6EF05 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C65C439928FDF66E00F6EF05 /* TitleDescriptionTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C679824828FCC26A00AFDB84 /* Services */ = {
@@ -216,6 +257,7 @@
 		C67982B528FD168800AFDB84 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C65C439628FDE19700F6EF05 /* WebView */,
 				C67982B628FD169200AFDB84 /* SchoolList */,
 			);
 			path = Components;
@@ -264,6 +306,7 @@
 		C6F350FC28F3C786004FFB26 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C65C439B28FDFE3B00F6EF05 /* View */,
 				C67982B528FD168800AFDB84 /* Components */,
 				C67982A628FD02D300AFDB84 /* Model */,
 				C679824828FCC26A00AFDB84 /* Services */,
@@ -395,6 +438,7 @@
 				C67982AD28FD08EB00AFDB84 /* School.swift in Sources */,
 				C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */,
 				C67982B928FD16B400AFDB84 /* SchoolListViewController.swift in Sources */,
+				C65C439A28FDF66E00F6EF05 /* TitleDescriptionTableViewCell.swift in Sources */,
 				C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */,
 				C67982B428FD148D00AFDB84 /* ClientError.swift in Sources */,
 				C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */,
