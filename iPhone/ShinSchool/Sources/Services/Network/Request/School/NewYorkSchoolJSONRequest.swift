@@ -4,7 +4,7 @@ import Foundation
 class NewYorkSchoolJSONRequest {
 
   enum APIConstants {
-    static let radiusDistance = 0.01
+    static let radiusDistance = 0.1
     static let schoolAPIEndPoint = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
   }
 

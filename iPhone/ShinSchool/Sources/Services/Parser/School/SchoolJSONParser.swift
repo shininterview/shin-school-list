@@ -14,8 +14,9 @@ public class SchoolJSONParser {
   }
 
   public static func schoolFromDictionary(_ dictionary: [String: AnyObject]) -> School? {
-    guard let email = dictionary[SchoolTableColumn.email] as? String else {
-      return nil
+    var email = ""
+    if let emailText = dictionary[SchoolTableColumn.email] as? String {
+      email = emailText
     }
     guard let location = dictionary[SchoolTableColumn.location] as? String else {
       return nil

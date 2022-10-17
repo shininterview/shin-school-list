@@ -145,7 +145,7 @@ extension SchoolListViewController: UITableViewDelegate {
     _ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath
   ) {
     if hasMoreData && !isRequestingData
-      && indexPath.item == dataSourceSnapshot.itemIdentifiers.count
+      && indexPath.item + 1 == dataSourceSnapshot.itemIdentifiers.count
     {
       fetchSchoolsModel()
     }
