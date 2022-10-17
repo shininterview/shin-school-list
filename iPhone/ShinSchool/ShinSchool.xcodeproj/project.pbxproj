@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824C28FCC26A00AFDB84 /* ClientConstants.swift */; };
+		C679825028FCC26A00AFDB84 /* SchoolJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824E28FCC26A00AFDB84 /* SchoolJSONRequest.swift */; };
+		C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */; };
+		C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */; };
 		C6F3510128F3C786004FFB26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F350FE28F3C786004FFB26 /* AppDelegate.swift */; };
 		C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */; };
 		C6F3510A28F3C794004FFB26 /* ShinSchoolInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6F3510428F3C794004FFB26 /* ShinSchoolInfo.plist */; };
@@ -16,6 +20,10 @@
 
 /* Begin PBXFileReference section */
 		C64517FF28F3C1A000E5064D /* ShinSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShinSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C679824C28FCC26A00AFDB84 /* ClientConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConstants.swift; sourceTree = "<group>"; };
+		C679824E28FCC26A00AFDB84 /* SchoolJSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolJSONRequest.swift; sourceTree = "<group>"; };
+		C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseClientConstants.swift; sourceTree = "<group>"; };
+		C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameterConstants.swift; sourceTree = "<group>"; };
 		C6F350FE28F3C786004FFB26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C6F3510428F3C794004FFB26 /* ShinSchoolInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShinSchoolInfo.plist; sourceTree = "<group>"; };
@@ -51,9 +59,53 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C679824828FCC26A00AFDB84 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C679824928FCC26A00AFDB84 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C679824928FCC26A00AFDB84 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C679824A28FCC26A00AFDB84 /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C679824A28FCC26A00AFDB84 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C679824B28FCC26A00AFDB84 /* Constants */,
+				C679824D28FCC26A00AFDB84 /* School */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		C679824B28FCC26A00AFDB84 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C679824C28FCC26A00AFDB84 /* ClientConstants.swift */,
+				C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */,
+				C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C679824D28FCC26A00AFDB84 /* School */ = {
+			isa = PBXGroup;
+			children = (
+				C679824E28FCC26A00AFDB84 /* SchoolJSONRequest.swift */,
+			);
+			path = School;
+			sourceTree = "<group>";
+		};
 		C6F350FC28F3C786004FFB26 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C679824828FCC26A00AFDB84 /* Services */,
 				C6F350FE28F3C786004FFB26 /* AppDelegate.swift */,
 				C6F350FF28F3C786004FFB26 /* SceneDelegate.swift */,
 			);
@@ -142,7 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6F3510128F3C786004FFB26 /* AppDelegate.swift in Sources */,
+				C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */,
+				C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */,
 				C6F3510228F3C786004FFB26 /* SceneDelegate.swift in Sources */,
+				C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */,
+				C679825028FCC26A00AFDB84 /* SchoolJSONRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
