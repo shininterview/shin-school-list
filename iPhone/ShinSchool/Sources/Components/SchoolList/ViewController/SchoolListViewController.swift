@@ -5,8 +5,9 @@ import UIKit
 /// This @c UIViewController shows a list of school.
 class SchoolListViewController: UIViewController {
   enum Constants {
-    static let pageSize = 10
     static let httpsScheme = "https"
+    static let pageSize = 10
+    static let prefetchThreshold = 40.0
   }
 
   private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<Int, School>()
@@ -140,12 +141,15 @@ extension SchoolListViewController: UITableViewDelegate {
     let safariViewController = SFSafariViewController(url: websiteURL)
     navigationController.pushViewController(safariViewController, animated: true)
   }
+}
 
-  func tableView(
-    _ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath
-  ) {
+// MARK: - UIScrollViewDelegate
+
+extension SchoolListViewController: UIScrollViewDelegate {
+  func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
     if hasMoreData && !isRequestingData
-      && indexPath.item + 1 == dataSourceSnapshot.itemIdentifiers.count
+      && scrollView.contentOffset.y + scrollView.bounds.size.height + Constants.prefetchThreshold
+        >= scrollView.contentSize.height
     {
       fetchSchoolsModel()
     }
