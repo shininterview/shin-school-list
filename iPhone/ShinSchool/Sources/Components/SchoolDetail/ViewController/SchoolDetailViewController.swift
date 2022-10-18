@@ -5,6 +5,7 @@ import UIKit
 class SchoolDetailViewController: UIViewController {
   private enum Constants {
     static let httpsScheme = "https"
+    static let veriticalPadding = 8.0
   }
 
   private let school: School
@@ -37,11 +38,12 @@ class SchoolDetailViewController: UIViewController {
     let stackView = UIStackView()
     stackView.translatesAutoresizingMaskIntoConstraints = false
     stackView.axis = .vertical
+    stackView.spacing = Constants.veriticalPadding
     scrollView.addSubview(stackView)
 
     let addressLabel = UILabel()
     addressLabel.numberOfLines = 0  // Enable multiline.
-    addressLabel.text = "\(school.location)\n\(school.city), \(school.stateCode) \(school.zip)"
+    addressLabel.text = school.location
     stackView.addArrangedSubview(addressLabel)
 
     let neighborhoodLabel = UILabel()
@@ -94,7 +96,7 @@ class SchoolDetailViewController: UIViewController {
   // MARK: - Private
 
   private func processServerData(_ score: SchoolSATScore) {
-    let totalCountText = NSLocalizedString("Total count:", comment: "Total count:")
+    let totalCountText = NSLocalizedString("Total report:", comment: "Total report:")
     let mathScoreText = NSLocalizedString("Math score:", comment: "Math score:")
     let readingScoreText = NSLocalizedString("Reading score:", comment: "Reading score:")
     let writingScoreText = NSLocalizedString("Writing score:", comment: "Writing score:")
