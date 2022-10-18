@@ -8,8 +8,10 @@ class SchoolDetailViewController: UIViewController {
   }
 
   private let school: School
+  private let deps: SchoolDetailViewControllerDeps
 
-  init(school: School) {
+  init(deps: SchoolDetailViewControllerDeps, school: School) {
+    self.deps = deps
     self.school = school
     super.init(nibName: nil, bundle: nil)
 

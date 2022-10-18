@@ -14,6 +14,8 @@
 		C65C43A928FE226300F6EF05 /* SchoolSATScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C43A828FE226300F6EF05 /* SchoolSATScore.swift */; };
 		C65C43AC28FE22E900F6EF05 /* SchoolSATScoreTableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C43AB28FE22E900F6EF05 /* SchoolSATScoreTableColumn.swift */; };
 		C65C43B028FE25C000F6EF05 /* SchoolSATScoreRequestFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C43AE28FE257700F6EF05 /* SchoolSATScoreRequestFake.swift */; };
+		C65C43B328FE271C00F6EF05 /* SchoolDetailViewControllerDeps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C43B128FE26A300F6EF05 /* SchoolDetailViewControllerDeps.swift */; };
+		C65C43B628FE279300F6EF05 /* ChaseSchoolListViewControllerDeps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C43B428FE277D00F6EF05 /* ChaseSchoolListViewControllerDeps.swift */; };
 		C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824C28FCC26A00AFDB84 /* ClientConstants.swift */; };
 		C679825028FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */; };
 		C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */; };
@@ -54,6 +56,8 @@
 		C65C43A828FE226300F6EF05 /* SchoolSATScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSATScore.swift; sourceTree = "<group>"; };
 		C65C43AB28FE22E900F6EF05 /* SchoolSATScoreTableColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSATScoreTableColumn.swift; sourceTree = "<group>"; };
 		C65C43AE28FE257700F6EF05 /* SchoolSATScoreRequestFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSATScoreRequestFake.swift; sourceTree = "<group>"; };
+		C65C43B128FE26A300F6EF05 /* SchoolDetailViewControllerDeps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailViewControllerDeps.swift; sourceTree = "<group>"; };
+		C65C43B428FE277D00F6EF05 /* ChaseSchoolListViewControllerDeps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseSchoolListViewControllerDeps.swift; sourceTree = "<group>"; };
 		C679824C28FCC26A00AFDB84 /* ClientConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConstants.swift; sourceTree = "<group>"; };
 		C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewYorkSchoolJSONRequest.swift; sourceTree = "<group>"; };
 		C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseClientConstants.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				C65C43A028FE157300F6EF05 /* SchoolDetailViewController.swift */,
+				C65C43B128FE26A300F6EF05 /* SchoolDetailViewControllerDeps.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 			children = (
 				C67982B828FD16B400AFDB84 /* SchoolListViewController.swift */,
 				C65C43A228FE163C00F6EF05 /* SchoolListViewControllerDeps.swift */,
+				C65C43B428FE277D00F6EF05 /* ChaseSchoolListViewControllerDeps.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 				C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */,
 				C65C43A928FE226300F6EF05 /* SchoolSATScore.swift in Sources */,
 				C6A605E228FDAAD800FE2E4D /* SchoolModelRequestFake.swift in Sources */,
+				C65C43B328FE271C00F6EF05 /* SchoolDetailViewControllerDeps.swift in Sources */,
 				C67982AD28FD08EB00AFDB84 /* School.swift in Sources */,
 				C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */,
 				C65C43A328FE163C00F6EF05 /* SchoolListViewControllerDeps.swift in Sources */,
@@ -498,6 +505,7 @@
 				C67982B428FD148D00AFDB84 /* ClientError.swift in Sources */,
 				C65C43B028FE25C000F6EF05 /* SchoolSATScoreRequestFake.swift in Sources */,
 				C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */,
+				C65C43B628FE279300F6EF05 /* ChaseSchoolListViewControllerDeps.swift in Sources */,
 				C679825028FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

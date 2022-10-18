@@ -126,7 +126,7 @@ extension SchoolListViewController: UITableViewDelegate {
     }
 
     let school = schools[index]
-    let viewController = SchoolDetailViewController(school: school)
+    let viewController = SchoolDetailViewController(deps: deps, school: school)
     navigationController.pushViewController(viewController, animated: true)
   }
 }
