@@ -1,11 +1,10 @@
 import Foundation
 
 /// Helper used for fetching school informations.
-class NewYorkSchoolJSONRequest {
+class NewWorkSchoolSATScoreRequest {
 
   private enum APIConstants {
-    static let radiusDistance = 0.1
-    static let schoolAPIEndPoint = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
+    static let schoolAPIEndPoint = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
   }
 
   let clientConstants: ClientConstants
@@ -14,9 +13,9 @@ class NewYorkSchoolJSONRequest {
     self.clientConstants = clientConstants
   }
 
-  func fetchJSONObjects(
-    pageSize: Int, pageOffset: Int,
-    completion: @escaping (Result<[Any], Error>) -> Void
+  func fetchScoresWithScrollID(
+    _ schoolID: String,
+    completion: @escaping (Result<SchoolSATScore, Error>) -> Void
   ) {
     guard var requestURLComponents = URLComponents(string: APIConstants.schoolAPIEndPoint) else {
       assert(false, "The API end point is incorrect.")
@@ -27,22 +26,11 @@ class NewYorkSchoolJSONRequest {
     let appTokenQueryItem = URLQueryItem(
       name: RequestParameterConstants.appTokenKey, value: clientConstants.socrataAppToken)
 
-    let limitQueryItem = URLQueryItem(
-      name: RequestParameterConstants.limitKey, value: String(pageSize))
-
-    let offsetQueryItem = URLQueryItem(
-      name: RequestParameterConstants.offsetKey, value: String(pageOffset))
-
-    let locationCoordinate = clientConstants.locationCoordinate
-    // A sample whereQuery can be: where=latitude between 40.6128 and 40.8128 and longitude between -74.106 and -73.906
-    let whereQuery =
-      "\(SchoolTableColumn.latitude) between \(locationCoordinate.latitude - APIConstants.radiusDistance) and \(locationCoordinate.latitude + APIConstants.radiusDistance) and \(SchoolTableColumn.longitude) between \(locationCoordinate.longitude - APIConstants.radiusDistance) and \(locationCoordinate.longitude + APIConstants.radiusDistance)"
-
+    // A sample whereQuery can be: where=dbn=02M260
+    let whereQuery = "\(SchoolTableColumn.databaseNumber)=\(schoolID)"
     let whereQueryItem = URLQueryItem(name: RequestParameterConstants.whereKey, value: whereQuery)
 
-    requestURLComponents.queryItems = [
-      appTokenQueryItem, limitQueryItem, offsetQueryItem, whereQueryItem,
-    ]
+    requestURLComponents.queryItems = [appTokenQueryItem, whereQueryItem]
 
     guard let requestURL = requestURLComponents.url else {
       assert(false, "Failed to fetch school JSON data. Is the URL malformed?")
@@ -61,12 +49,22 @@ class NewYorkSchoolJSONRequest {
         return
       }
 
-      if let JSONString = try? JSONSerialization.jsonObject(with: data, options: []) as? [Any] {
-        completion(.success(JSONString))
+      let JSONObject = try? JSONSerialization.jsonObject(with: data, options: [])
+      guard let JSONArray = JSONObject as? [Any] else {
+        completion(.failure(ClientError.invalidServerResponse))
         return
       }
 
-      completion(.failure(ClientError.invalidServerResponse))
+      guard let dictionary = JSONArray.first as? [String: AnyObject] else {
+        completion(.failure(ClientError.invalidServerResponse))
+        return
+      }
+
+      if let score = SchoolSATJSONScoreParser.schoolSATScoreFromDictionary(dictionary) {
+        completion(.success(score))
+      } else {
+        completion(.failure(ClientError.invalidServerResponse))
+      }
     }
 
     dataTask.resume()
