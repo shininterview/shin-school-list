@@ -1,6 +1,6 @@
 import Foundation
 
-public enum ClientError: Error {
+enum ClientError: Error {
   /// Indicates there is either invalid server data or unexpected server data.
   case invalidServerResponse
 }

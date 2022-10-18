@@ -22,11 +22,12 @@ class NewWorkSchoolSATScoreRequest: SchoolSATScoreRequest {
       return
     }
 
-    // A sample url can be:  https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$$app_token=QIJIwfPSzqXgvFAURtmHNpbDw&$limit=20&$offset=20&$where=latitude between 40.6128 and 40.8128 and longitude between -74.106 and -73.906
+    // A sample url can be:
+    // https://data.cityofnewyork.us/resource/f9bf-2cp4.json?$$app_token=QIJIwfPSzqXgvFAURtmHNpbDw&$where=dbn='01M450'
     let appTokenQueryItem = URLQueryItem(
       name: RequestParameterConstants.appTokenKey, value: clientConstants.socrataAppToken)
 
-    // A sample whereQuery can be: where=dbn=02M260
+    // A sample whereQuery can be: where=dbn='01M450'.
     let whereQuery = "\(SchoolTableColumn.databaseNumber)='\(schoolID)'"
     let whereQueryItem = URLQueryItem(name: RequestParameterConstants.whereKey, value: whereQuery)
 
