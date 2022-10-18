@@ -73,9 +73,28 @@ class SchoolListViewController: UIViewController {
     }
 
     isRequestingData = true
+
+    let activityIndicator = UIActivityIndicatorView()
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+    activityIndicator.style = .large
+    activityIndicator.startAnimating()
+    view.addSubview(activityIndicator)
+
+    NSLayoutConstraint.activate([
+      activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+    ])
+
     deps.schoolModelRequest.fetchSchools(
       pageSize: Constants.pageSize, pageOffset: dataSourceSnapshot.itemIdentifiers.count,
       completion: { [weak self] response in
+        DispatchQueue.main.async {
+          activityIndicator.removeFromSuperview()
+        }
+        if let self = self {
+          self.isRequestingData = false
+        }
+
         do {
           let schools = try response.get()
           DispatchQueue.main.async {
@@ -86,10 +105,6 @@ class SchoolListViewController: UIViewController {
         } catch {
           print(error)
           // TODO: Show error message.
-        }
-
-        if let self = self {
-          self.isRequestingData = false
         }
       })
   }
