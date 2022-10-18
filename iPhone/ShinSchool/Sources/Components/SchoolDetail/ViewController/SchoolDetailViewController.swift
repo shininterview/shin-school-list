@@ -9,6 +9,10 @@ class SchoolDetailViewController: UIViewController {
 
   private let school: School
   private let deps: SchoolDetailViewControllerDeps
+  private let totalCountLabel = UILabel()
+  private let mathScoreLabel = UILabel()
+  private let readingScoreLabel = UILabel()
+  private let writingScoreLabel = UILabel()
 
   init(deps: SchoolDetailViewControllerDeps, school: School) {
     self.deps = deps
@@ -43,6 +47,11 @@ class SchoolDetailViewController: UIViewController {
     neighborhoodLabel.text = school.neighborhood
     stackView.addArrangedSubview(neighborhoodLabel)
 
+    stackView.addArrangedSubview(totalCountLabel)
+    stackView.addArrangedSubview(mathScoreLabel)
+    stackView.addArrangedSubview(readingScoreLabel)
+    stackView.addArrangedSubview(writingScoreLabel)
+
     let websiteButton = UIButton()
     websiteButton.backgroundColor = .systemTeal
     let websiteText = NSLocalizedString("Website", comment: "Website")
@@ -62,9 +71,34 @@ class SchoolDetailViewController: UIViewController {
       stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
       stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
     ])
+
+    deps.schoolSATScoreRequest.fetchScoresWithScrollID(
+      school.UUID,
+      completion: { [weak self] response in
+        do {
+          let score = try response.get()
+          if let self = self {
+            self.processServerData(score)
+          }
+        } catch {
+          print(error)
+          // TODO: Show error message.
+        }
+      })
   }
 
   // MARK: - Private
+
+  private func processServerData(_ score: SchoolSATScore) {
+    let totalCountText = NSLocalizedString("Total count:", comment: "Total count:")
+    let mathScoreText = NSLocalizedString("Math score:", comment: "Math score:")
+    let readingScoreText = NSLocalizedString("Reading score:", comment: "Reading score:")
+    let writingScoreText = NSLocalizedString("Writing score:", comment: "Writing score:")
+    totalCountLabel.text = totalCountText.appending(String(score.count))
+    mathScoreLabel.text = mathScoreText.appending(String(score.mathScore))
+    readingScoreLabel.text = readingScoreText.appending(String(score.readingScore))
+    writingScoreLabel.text = writingScoreText.appending(String(score.writingScore))
+  }
 
   @objc private func presentWebViewController() {
     guard let navigationController = self.navigationController else {
