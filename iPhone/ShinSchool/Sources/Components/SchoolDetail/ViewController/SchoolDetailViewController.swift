@@ -40,7 +40,8 @@ class SchoolDetailViewController: UIViewController {
     scrollView.addSubview(stackView)
 
     let addressLabel = UILabel()
-    addressLabel.text = "\(school.location) \(school.city) \(school.stateCode) \(school.zip)"
+    addressLabel.numberOfLines = 0 // Enable multiline.
+    addressLabel.text = "\(school.location)\n\(school.city), \(school.stateCode) \(school.zip)"
     stackView.addArrangedSubview(addressLabel)
 
     let neighborhoodLabel = UILabel()
@@ -68,6 +69,7 @@ class SchoolDetailViewController: UIViewController {
 
       stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
       stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+      stackView.widthAnchor.constraint(equalTo: layoutMarginsGuide.widthAnchor),
       stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
       stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
     ])

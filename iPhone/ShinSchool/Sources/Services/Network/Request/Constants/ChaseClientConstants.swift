@@ -6,8 +6,8 @@ class ChaseClientConstants: ClientConstants {
   private enum Constants {
     static let latitudeKey = "latitude"
     static let longitudeKey = "longitude"
-    static let defaultLatitude = 40.7128  // New work latitude.
-    static let defaultLongitude = -74.0060  // New work longitude.
+    static let defaultLatitude = 40.713413  // New work latitude.
+    static let defaultLongitude = -73.985947  // New work longitude.
   }
 
   var locationCoordinate: CLLocationCoordinate2D {

@@ -19,7 +19,6 @@
 		C65C43B928FE2D1900F6EF05 /* NewWorkSchoolSATScoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C43B728FE2CD100F6EF05 /* NewWorkSchoolSATScoreRequest.swift */; };
 		C65C43BC28FE2E4C00F6EF05 /* SchoolSATJSONScoreParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C43BA28FE2E0500F6EF05 /* SchoolSATJSONScoreParser.swift */; };
 		C679824F28FCC26A00AFDB84 /* ClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824C28FCC26A00AFDB84 /* ClientConstants.swift */; };
-		C679825028FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */; };
 		C679825228FCC34900AFDB84 /* ChaseClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */; };
 		C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */; };
 		C679825C28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679825B28FCFD1200AFDB84 /* SchoolJSONParserUnitTests.swift */; };
@@ -63,7 +62,6 @@
 		C65C43B728FE2CD100F6EF05 /* NewWorkSchoolSATScoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkSchoolSATScoreRequest.swift; sourceTree = "<group>"; };
 		C65C43BA28FE2E0500F6EF05 /* SchoolSATJSONScoreParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSATJSONScoreParser.swift; sourceTree = "<group>"; };
 		C679824C28FCC26A00AFDB84 /* ClientConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConstants.swift; sourceTree = "<group>"; };
-		C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewYorkSchoolJSONRequest.swift; sourceTree = "<group>"; };
 		C679825128FCC34900AFDB84 /* ChaseClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseClientConstants.swift; sourceTree = "<group>"; };
 		C679825328FCD5B400AFDB84 /* RequestParameterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameterConstants.swift; sourceTree = "<group>"; };
 		C679825928FCFD1200AFDB84 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				C65C43A428FE221100F6EF05 /* SAT */,
-				C679824E28FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift */,
 				C67982AE28FD0F5B00AFDB84 /* SchoolModelRequest.swift */,
 				C67982B028FD114500AFDB84 /* NewYorkSchoolModelRequest.swift */,
 			);
@@ -514,7 +511,6 @@
 				C65C43B028FE25C000F6EF05 /* SchoolSATScoreRequestFake.swift in Sources */,
 				C679825428FCD5B400AFDB84 /* RequestParameterConstants.swift in Sources */,
 				C65C43B628FE279300F6EF05 /* ChaseSchoolListViewControllerDeps.swift in Sources */,
-				C679825028FCC26A00AFDB84 /* NewYorkSchoolJSONRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

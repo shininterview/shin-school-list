@@ -1,7 +1,7 @@
 import Foundation
 
 /// Helper used for fetching school informations.
-class NewWorkSchoolSATScoreRequest {
+class NewWorkSchoolSATScoreRequest: SchoolSATScoreRequest {
 
   private enum APIConstants {
     static let schoolAPIEndPoint = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
@@ -27,7 +27,7 @@ class NewWorkSchoolSATScoreRequest {
       name: RequestParameterConstants.appTokenKey, value: clientConstants.socrataAppToken)
 
     // A sample whereQuery can be: where=dbn=02M260
-    let whereQuery = "\(SchoolTableColumn.databaseNumber)=\(schoolID)"
+    let whereQuery = "\(SchoolTableColumn.databaseNumber)='\(schoolID)'"
     let whereQueryItem = URLQueryItem(name: RequestParameterConstants.whereKey, value: whereQuery)
 
     requestURLComponents.queryItems = [appTokenQueryItem, whereQueryItem]
