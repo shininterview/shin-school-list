@@ -95,7 +95,12 @@ class SchoolDetailViewController: UIViewController {
 
   // MARK: - Private
 
-  private func processServerData(_ score: SchoolSATScore) {
+  private func processServerData(_ scoreOptional: SchoolSATScore?) {
+    guard let score = scoreOptional else {
+      totalCountLabel.text = NSLocalizedString("No data", comment: "No data")
+      return
+    }
+
     let totalCountText = NSLocalizedString("Total report:", comment: "Total report:")
     let mathScoreText = NSLocalizedString("Math score:", comment: "Math score:")
     let readingScoreText = NSLocalizedString("Reading score:", comment: "Reading score:")

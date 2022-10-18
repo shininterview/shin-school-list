@@ -6,5 +6,5 @@ import Foundation
 protocol SchoolSATScoreRequest {
   func fetchScoresWithScrollID(
     _ schoolID: String,
-    completion: @escaping (Result<SchoolSATScore, Error>) -> Void)
+    completion: @escaping (Result<SchoolSATScore?, Error>) -> Void)
 }

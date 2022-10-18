@@ -15,7 +15,7 @@ class NewWorkSchoolSATScoreRequest: SchoolSATScoreRequest {
 
   func fetchScoresWithScrollID(
     _ schoolID: String,
-    completion: @escaping (Result<SchoolSATScore, Error>) -> Void
+    completion: @escaping (Result<SchoolSATScore?, Error>) -> Void
   ) {
     guard var requestURLComponents = URLComponents(string: APIConstants.schoolAPIEndPoint) else {
       assert(false, "The API end point is incorrect.")
@@ -57,7 +57,7 @@ class NewWorkSchoolSATScoreRequest: SchoolSATScoreRequest {
       }
 
       guard let dictionary = JSONArray.first as? [String: AnyObject] else {
-        completion(.failure(ClientError.invalidServerResponse))
+        completion(.success(nil))
         return
       }
 

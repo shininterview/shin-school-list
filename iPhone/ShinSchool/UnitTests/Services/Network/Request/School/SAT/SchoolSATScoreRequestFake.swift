@@ -8,7 +8,7 @@ class SchoolSATScoreRequestFake: SchoolSATScoreRequest {
 
   func fetchScoresWithScrollID(
     _ schoolID: String,
-    completion: @escaping (Result<SchoolSATScore, Error>) -> Void
+    completion: @escaping (Result<SchoolSATScore?, Error>) -> Void
   ) {
     let score = SchoolSATScore(
       count: SampleData.number, mathScore: SampleData.number, readingScore: SampleData.number,
