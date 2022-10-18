@@ -40,7 +40,7 @@ class SchoolDetailViewController: UIViewController {
     scrollView.addSubview(stackView)
 
     let addressLabel = UILabel()
-    addressLabel.numberOfLines = 0 // Enable multiline.
+    addressLabel.numberOfLines = 0  // Enable multiline.
     addressLabel.text = "\(school.location)\n\(school.city), \(school.stateCode) \(school.zip)"
     stackView.addArrangedSubview(addressLabel)
 
@@ -79,8 +79,10 @@ class SchoolDetailViewController: UIViewController {
       completion: { [weak self] response in
         do {
           let score = try response.get()
-          if let self = self {
-            self.processServerData(score)
+          DispatchQueue.main.async {
+            if let self = self {
+              self.processServerData(score)
+            }
           }
         } catch {
           print(error)

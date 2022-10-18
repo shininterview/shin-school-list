@@ -78,8 +78,10 @@ class SchoolListViewController: UIViewController {
       completion: { [weak self] response in
         do {
           let schools = try response.get()
-          if let self = self {
-            self.processServerData(schools)
+          DispatchQueue.main.async {
+            if let self = self {
+              self.processServerData(schools)
+            }
           }
         } catch {
           print(error)
